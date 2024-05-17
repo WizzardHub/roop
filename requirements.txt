@@ -1,5 +1,5 @@
 numpy==1.25.0
-typing-extensions==4.6.1
+typing-extensions==4.8.0
 opencv-python==4.8.0.74
 onnx==1.14.0
 insightface==0.7.3
