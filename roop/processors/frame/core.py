@@ -2,8 +2,6 @@ import os
 import sys
 import importlib
 import psutil
-import roop.processors.frame.face_enhancer
-import roop.processors.frame.face_swapper
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from queue import Queue
 from types import ModuleType
@@ -45,7 +43,7 @@ def get_frame_processors_modules(frame_processors: List[str]) -> List[ModuleType
 
     if not FRAME_PROCESSORS_MODULES:
         for frame_processor in frame_processors:
-            # frame_processor_module = load_frame_processor_module(frame_processor)
+            frame_processor_module = load_frame_processor_module(frame_processor)
             FRAME_PROCESSORS_MODULES.append(frame_processor_module)
     return FRAME_PROCESSORS_MODULES
 
