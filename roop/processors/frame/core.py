@@ -23,8 +23,11 @@ FRAME_PROCESSORS_INTERFACE = [
 
 
 def load_frame_processor_module(frame_processor: str) -> Any:
+    print("registering frame processors ...")
     try:
+        print(f'roop.processors.frame.{frame_processor}')
         frame_processor_module = importlib.import_module(f'roop.processors.frame.{frame_processor}')
+        print(frame_processor_module)
         for method_name in FRAME_PROCESSORS_INTERFACE:
             if not hasattr(frame_processor_module, method_name):
                 raise NotImplementedError
